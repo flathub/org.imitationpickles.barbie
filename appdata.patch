@@ -1,39 +1,51 @@
 From 3add736efb83a8e678ea57a5cfe9c0096f9ea9cb Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Matthias=20Mail=C3=A4nder?= <matthias@mailaender.name>
 Date: Sat, 20 Aug 2022 21:21:28 +0200
-Subject: [PATCH 1/2] Add Bugtracker
 
 ---
- seahorse-adventures.metainfo.xml | 1 +
- 1 file changed, 1 insertion(+)
+ seahorse-adventures.metainfo.xml | 29 ++++++++++++++++++++++++-----
+ 1 file changed, 24 insertions(+), 5 deletions(-)
 
 diff --git a/seahorse-adventures.metainfo.xml b/seahorse-adventures.metainfo.xml
-index deefcbf..4d08304 100644
+index deefcbf..8a851b1 100644
 --- a/seahorse-adventures.metainfo.xml
 +++ b/seahorse-adventures.metainfo.xml
-@@ -15,6 +15,7 @@
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<component type="desktop">
++<component type="desktop-application">
+ 	<id>seahorse-adventures.desktop</id>
+ 	<metadata_license>CC0-1.0</metadata_license>
+ 	<project_license>GPL-2.0+</project_license>
+@@ -15,14 +15,33 @@
  		</p>
  	</description>
  	<url type="homepage">http://www.imitationpickles.org/barbie/</url>
 +	<url type="bugtracker">https://github.com/dulsi/seahorse-adventures/issues</url>
++	<url type="vcs-browser">https://github.com/dulsi/seahorse-adventures/</url>
++	<launchable type="desktop-id">org.imitationpickles.barbie.desktop</launchable>
++	<developer id="org.imitationpickles">
++		<name>Phil Hassey</name>
++	</developer>
++
  	<screenshots>
- 		<screenshot type="default">http://www.imitationpickles.org/barbie/content/jungle.png</screenshot>
- 		<screenshot>http://www.imitationpickles.org/barbie/content/volcano.png</screenshot>
-
-From f151b96e1595a15e42fcadaec156ffd088c56cce Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?Matthias=20Mail=C3=A4nder?= <matthias@mailaender.name>
-Date: Sat, 20 Aug 2022 21:21:37 +0200
-Subject: [PATCH 2/2] Add releases
-
----
- seahorse-adventures.metainfo.xml | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/seahorse-adventures.metainfo.xml b/seahorse-adventures.metainfo.xml
-index 4d08304..f0de170 100644
---- a/seahorse-adventures.metainfo.xml
-+++ b/seahorse-adventures.metainfo.xml
-@@ -26,4 +26,9 @@
+-		<screenshot type="default">http://www.imitationpickles.org/barbie/content/jungle.png</screenshot>
+-		<screenshot>http://www.imitationpickles.org/barbie/content/volcano.png</screenshot>
+-		<screenshot>http://www.imitationpickles.org/barbie/content/moon.png</screenshot>
+-		<screenshot>http://www.imitationpickles.org/barbie/content/boss.png</screenshot>
++		<screenshot type="default">
++			<image>http://www.imitationpickles.org/barbie/content/jungle.png</image></screenshot>
++		<screenshot>
++			<image>http://www.imitationpickles.org/barbie/content/volcano.png</image>
++		</screenshot>
++		<screenshot>
++			<image>http://www.imitationpickles.org/barbie/content/moon.png</image>
++		</screenshot>
++		<screenshot>
++			<image>http://www.imitationpickles.org/barbie/content/boss.png</image>
++		</screenshot>
+ 	</screenshots>
+ 	<content_rating type="oars-1.1">
  		<content_attribute id="violence-cartoon">moderate</content_attribute>
  	</content_rating>
  	<update_contact>jwrdegoede_at_fedoraproject.org</update_contact>
@@ -43,3 +55,6 @@ index 4d08304..f0de170 100644
 +		<release version="1.2" date="2020-05-02" />
 +	</releases>
  </component>
+--
+libgit2 1.7.2
+
