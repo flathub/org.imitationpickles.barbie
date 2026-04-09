@@ -12,7 +12,13 @@ finish-args:
   - --share=network
   - --device=dri
   - --socket=pulseaudio
-
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /lib/python3.*/*/pygame/tests
+  - /lib/python3.*/*/pygame/examples
+  - /lib/python3.*/*/pygame/docs
 modules:
   - name: portmidi
     buildsystem: cmake-ninja
