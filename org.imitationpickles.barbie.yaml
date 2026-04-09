@@ -1,6 +1,6 @@
 app-id: org.imitationpickles.barbie
 runtime: org.freedesktop.Platform
-runtime-version: 21.08
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: seahorse-adventures
 rename-icon: seahorse-adventures
@@ -16,11 +16,17 @@ finish-args:
 modules:
   - name: portmidi
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    cleanup:
+      - /bin
     sources:
-      - type: git
-        url: https://github.com/PortMidi/portmidi.git
-        tag: v2.0.3
+      - type: archive
+        url: https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.7.tar.gz
+        sha256: 43fa65b4ed7ebaa68b0028a538ba8b2ca4dc9b86a7e22ec48842070e010f823f
 
+  - shared-modules/SDL2/SDL2_ttf.json
+  - shared-modules/SDL2/SDL2_image.json
   - python3-requirements.json
 
   - name: seahorse-adventures
@@ -43,7 +49,7 @@ modules:
         url: https://github.com/dulsi/seahorse-adventures.git
         tag: Release-1.4
         commit: 6ef1a494f158e8e5e5f76e7b222c23f0a1690672
-      - type: file
-        path: run.sh
       - type: patch
         path: appdata.patch
+      - type: file
+        path: run.sh
