@@ -9,7 +9,6 @@ rename-appdata-file: seahorse-adventures.metainfo.xml
 finish-args:
   - --socket=x11
   - --share=ipc
-  - --share=network
   - --device=dri
   - --socket=pulseaudio
 cleanup:
