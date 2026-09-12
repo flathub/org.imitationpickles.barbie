@@ -1,6 +1,6 @@
 app-id: org.imitationpickles.barbie
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: seahorse-adventures
 rename-icon: seahorse-adventures
@@ -30,8 +30,10 @@ modules:
         url: https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.7.tar.gz
         sha256: 43fa65b4ed7ebaa68b0028a538ba8b2ca4dc9b86a7e22ec48842070e010f823f
 
+  - SDL2.json
   - shared-modules/SDL2/SDL2_ttf.json
   - shared-modules/SDL2/SDL2_image.json
+  - shared-modules/SDL2/SDL2_mixer.json
   - python3-requirements.json
 
   - name: seahorse-adventures
@@ -40,15 +42,15 @@ modules:
       - install -Dm 755 run.sh ${FLATPAK_DEST}/bin/seahorse-adventures
       - mkdir -p ${FLATPAK_DEST}/share/seahorse-adventures/
       - cp -r {data,lib} ${FLATPAK_DEST}/share/seahorse-adventures/
-      - install -Dm 644 *.ini ${FLATPAK_DEST}/share/seahorse-adventures
-      - install -Dm 555 leveledit.py ${FLATPAK_DEST}/share/seahorse-adventures
-      - install -Dm 555 run_game.py ${FLATPAK_DEST}/share/seahorse-adventures
-      - install -Dm 555 tileedit.py ${FLATPAK_DEST}/share/seahorse-adventures
-      - install -Dm 644 icon32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/seahorse-adventures.png
-      - install -Dm 644 icon64.png ${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/seahorse-adventures.png
-      - install -Dm 644 icon128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/seahorse-adventures.png
-      - install -Dm 644 seahorse-adventures.desktop ${FLATPAK_DEST}/share/applications/seahorse-adventures.desktop
-      - install -Dm 644 seahorse-adventures.metainfo.xml ${FLATPAK_DEST}/share/metainfo/seahorse-adventures.metainfo.xml
+      - install -Dm644 *.ini ${FLATPAK_DEST}/share/seahorse-adventures
+      - install -Dm555 leveledit.py ${FLATPAK_DEST}/share/seahorse-adventures
+      - install -Dm555 run_game.py ${FLATPAK_DEST}/share/seahorse-adventures
+      - install -Dm555 tileedit.py ${FLATPAK_DEST}/share/seahorse-adventures
+      - install -Dm644 icon32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/seahorse-adventures.png
+      - install -Dm644 icon64.png ${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/seahorse-adventures.png
+      - install -Dm644 icon128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/seahorse-adventures.png
+      - install -Dm644 seahorse-adventures.desktop -t ${FLATPAK_DEST}/share/applications/
+      - install -Dm644 seahorse-adventures.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/
     sources:
       - type: git
         url: https://github.com/dulsi/seahorse-adventures.git
